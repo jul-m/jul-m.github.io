@@ -20,6 +20,8 @@ brew install kcl-lsp
 
 **Homepage:** https://kcl-lang.io
 
+**License:** Apache-2.0
+
 ## Usage
 
 After installation, the `kcl-language-server` binary will be available in your PATH.
@@ -28,3 +30,9 @@ After installation, the `kcl-language-server` binary will be available in your P
 
 - macOS (Intel and Apple Silicon)
 - Linux (x86_64 and ARM64)
+
+## Testing
+
+The formula includes tests to verify:
+- Binary installation and executability
+- Basic functionality verification

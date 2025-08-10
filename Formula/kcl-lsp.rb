@@ -2,7 +2,7 @@ class KclLsp < Formula
   desc "A constraint-based record & functional language mainly used in configuration and policy scenarios."
   homepage "https://kcl-lang.io"
   version "0.11.2"
-  license "Apache License"
+  license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
@@ -30,5 +30,14 @@ class KclLsp < Formula
     prefix.install_metafiles
     libexec.install Dir["*"]
     bin.install "#{libexec}/bin/kcl-language-server"
+  end
+
+  test do
+    # Test that the binary exists and is executable
+    assert_predicate bin/"kcl-language-server", :exist?
+    assert_predicate bin/"kcl-language-server", :executable?
+    
+    # Test basic functionality (LSP servers typically respond to --help or --version)
+    system "#{bin}/kcl-language-server", "--help"
   end
 end
